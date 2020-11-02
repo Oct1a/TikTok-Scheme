@@ -1,5 +1,5 @@
 # TikTok-Scheme
-抖音、抖音极速版、tiktok Scheme schemas获取
+抖音、抖音极速版、tiktok Scheme schemas获取，将持续更新
 
 ```
 // gd_label是唤起应用时，通知客户端记录打点的字段
