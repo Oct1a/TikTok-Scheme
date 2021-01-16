@@ -28,7 +28,6 @@
 ```
 ios内部schema是aweme开头，所提替换链接上的schema为 aweme 开头
 
-
 /* ios
             微信中，下载短链302到应用宝，同时universal link会302到 snssdk143://xx，而微信会屏蔽snssdk143://这种非http协议，
             由于两者时间很短，几乎同时，似乎对短链的302也屏蔽的，（不太了解机制），所以两者时间上要有一定的间隔。
@@ -42,3 +41,66 @@ ios内部schema是aweme开头，所提替换链接上的schema为 aweme 开头
 获取用户信息
 /web/api/v2/user/info/?sec_uid={{sec_uid}}
 ```
+
+
+
+# 快手Schema
+
+|                 |                     |
+| --------------- | ------------------- |
+| kwai://home     | 打开首页（启动APP） |
+| ksthanos://home |                     |
+|                 |                     |
+
+
+
+# 跳转应用商店
+
+market://details?id={{PackageName}}
+
+
+
+
+
+快手
+
+kwai://gamezone/home 打开游戏专区
+kwai://gamezone/game/[游戏ID] 打开某个游戏
+kwai://webview?url=[URL链接] 在快手中打开指定URL
+kwai://tag/topic/[标签名称] 打开标签
+kwai://home/following 打开关注
+kwai://home/hot 打开热搜
+kwai://promotion打开发现 
+kwai://home/local 打开同城
+kwai://profile/[用户UID] 打开用户主页
+kwai://profilesetting 编辑个人资料
+kwai://business/poi 地理位置
+kwai://business/location 定位界面
+kwai://work/[作品ID] 打开某作品
+kwai://work/[PhotoId]?userId=[UserId] 图片作品 
+kwai://live/play/[LiveStreamId] 直播
+kwai://liveaggregate?sourceType=[不知道什么参数]
+kwai://liveaggregate/[未知参数]?sourceType=[未知参数]
+kwai://musicstation/[PhotoId]?userId=[UserId]&sourceType=[Integer.valueOf(13)]
+kwai://musicstation 快手音悦台
+kwai://followers 粉丝列表
+kwai://followings 关注列表
+kwai://tube/square 小剧场
+
+
+
+微信
+
+weixin://dl/scan 扫一扫
+weixin://dl/feedback 反馈
+weixin://dl/moments 朋友圈
+weixin://dl/settings 设置
+weixin://dl/notifications 消息通知设置
+weixin://dl/chat 聊天设置
+weixin://dl/general 通用设置
+weixin://dl/officialaccounts 公众号
+weixin://dl/games 游戏
+weixin://dl/help 帮助
+weixin://dl/feedback 反馈
+weixin://dl/profile 个人信息
+weixin://dl/features 功能插件
