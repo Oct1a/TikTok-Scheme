@@ -1,30 +1,41 @@
 # TikTok-Scheme
 抖音、抖音极速版、tiktok 快手 Scheme schemas获取，将持续更新
 
-```
+>  以下各种Scheme在PC或其它设备上都是无效的，所以只有Android设备能识别这类连接并进行启动，ios内部schema是aweme开头，所提替换链接上的schema为 aweme 开头
+
+
+## 抖音Schema
+> 网址仅抖音内部人员查看
 gd_label是唤起应用时，通知客户端记录打点的字段
 gd_label参数： https://wiki.bytedance.net/pages/viewpage.action?pageId=179404954
 gd_label的值有哪些： https://docs.google.com/spreadsheets/d/1EWzh4gIbE861d9Rbk-M7QNYCPnltkNt9r2ETVSV2wf4/edit#gid=2126697475
 
-```
-## 抖音Schema
 | Schema | 描述 |
 | -------------------- | ------------------- |
-| home: 'snssdk1128://feed?refer=web&gd_label={{gd_label}}',   | 首页feed     |
-| detail: 'snssdk1128://aweme/detail/{{id}}?refer=web&gd_label={{gd_label}}&appParam={{appParam}}&needlaunchlog=1',   | 作品详情页     |
-| user: 'snssdk1128://user/profile/{{uid}}?refer=web&gd_label={{gd_label}}&type={{type}}&needlaunchlog=1',   | 用户主页     |
-| challenge: 'snssdk1128://challenge/detail/{{id}}?refer=web&is_commerce=0',   | 挑战详情     |
-| music: 'snssdk1128://music/detail/{{id}}?refer=web',   |  音乐详情，音乐详情ID     |
-| live: 'snssdk1128://live?room_id={{room_id}}&user_id={{user_id}}&u_code={{u_code}}&from=webview&refer=web',   | 直播间     |
-| webview: 'snssdk1128://webview?url={{url}}&from=webview&refer=web',   | webview     |
-| webview_fullscreen: 'snssdk1128://webview?url={{url}}&from=webview&hide_nav_bar=1&refer=web',   |  webview 沉浸式     |
-| poidetail: 'snssdk1128://poi/detail?id={{id}}&from=webview&refer=web',   | poi详情页     |
-| forward: 'snssdk1128://forward/detail/{{id}}',   |  转发详情页     |
-| billboard_word: 'snssdk1128://search/trending',   | 热搜词榜     |
-| billboard_video: 'snssdk1128://search/trending?type=1',   | 热搜视频榜     |
-| billboard_music: 'snssdk1128://search/trending?type=2',   | 热搜音乐榜     |
-| billboard_positive: 'snssdk1128://search/trending?type=3',   |  正能量榜     |
-| billboard_star: 'snssdk1128://search/trending?type=4'   |  明星榜     |
+| snssdk1128://feed?refer=web&gd_label={{gd_label}}   | 首页feed     |
+| snssdk1128://aweme/detail/{{id}}?refer=web&gd_label={{gd_label}}&appParam={{appParam}}&needlaunchlog=1'   | 作品详情页     |
+| snssdk1128://user/profile/{{uid}}?refer=web&gd_label={{gd_label}}&type={{type}}&needlaunchlog=1   | 用户主页     |
+| snssdk1128://challenge/detail/{{id}}?refer=web&is_commerce=0   | 挑战详情     |
+| snssdk1128://music/detail/{{id}}?refer=web   |  音乐详情，音乐详情ID     |
+| snssdk1128://live?room_id={{room_id}}&user_id={{user_id}}&u_code={{u_code}}&from=webview&refer=web   | 直播间     |
+| snssdk1128://webview?url={{url}}&from=webview&refer=web   | webview     |
+| snssdk1128://webview?url={{url}}&from=webview&hide_nav_bar=1&refer=web   |  webview 沉浸式     |
+| snssdk1128://poi/detail?id={{id}}&from=webview&refer=web   | poi详情页     |
+| snssdk1128://forward/detail/{{id}}   |  转发详情页     |
+| snssdk1128://search/trending   | 热搜词榜     |
+| snssdk1128://search/trending?type=1   | 热搜视频榜     |
+| snssdk1128://search/trending?type=2   | 热搜音乐榜     |
+| snssdk1128://search/trending?type=3   |  正能量榜     |
+| snssdk1128://search/trending?type=4   |  明星榜     |
+
+>  **gd_label:**
+>  click_wap_profile_bottom  跳转主页
+>  click_wap_download_follow 跳转主页并关注
+>  click_wap_profile_feature 跳转视频
+>  click_wap_detail_download_feature 打开视频
+>
+>  **type:**
+>  need_follow 需要关注
 
 
 
@@ -34,26 +45,6 @@ gd_label的值有哪些： https://docs.google.com/spreadsheets/d/1EWzh4gIbE861d
 抖音极速版将抖音schema的1128替换成2329即可。
 schema = schema.replace(/^snssdk1128/, 'snssdk2329');
 ```
-ios内部schema是aweme开头，所提替换链接上的schema为 aweme 开头
-
-```
-
-/* ios
-            微信中，下载短链302到应用宝，同时universal link会302到 snssdk143://xx，而微信会屏蔽snssdk143://这种非http协议，
-            由于两者时间很短，几乎同时，似乎对短链的302也屏蔽的，（不太了解机制），所以两者时间上要有一定的间隔。
-            由于下载短链在当前页面打开应用宝页面，就不会执行后面的代码，所以先进行跳转
-            */
-
-```
-
- qq空间无法唤起（下载）app， qq会话窗口可以，但是无法区别是从qq会话还是空间打开的页面
-    // 所以在qq内，使用一个弹层引导用户在其它浏览器打开页面
-
-```
-获取用户信息
-/web/api/v2/user/info/?sec_uid={{sec_uid}}
-```
-
 
 
 # 快手Schema
@@ -74,11 +65,8 @@ ios内部schema是aweme开头，所提替换链接上的schema为 aweme 开头
 | kwai://business/poi  | 地理位置   |
 | kwai://business/location  | 定位界面   |
 | kwai://work/[作品ID]  | 打开某作品   |
-| kwai://work/[PhotoId]?userId=[UserId] |  图片作品    |
-| kwai://live/play/[LiveStreamId]  | 直播   |
-| kwai://liveaggregate?sourceType=[未知参数] |    |
-| kwai://liveaggregate/[未知参数]?sourceType=[未知参数] |    |
-| kwai://musicstation/[PhotoId]?userId=[UserId]&sourceType=[Integer.valueOf(13)] |    |
+| kwai://work/[照片ID]?userId=[用户ID] |  图片作品    |
+| kwai://live/play/[直播房间id] | 直播   |
 | kwai://musicstation  | 快手音悦台   |
 | kwai://followers  | 粉丝列表   |
 | kwai://followings  | 关注列表   |
@@ -86,25 +74,65 @@ ios内部schema是aweme开头，所提替换链接上的schema为 aweme 开头
 
 
 
+# 跳转应用商店Scheme/(Market) 
+
+| Scheme                              | 说明                              |  |
+| :---------------------------------- | :-------------------------------- | ----------------------------------- |
+| market://details?id={{PackageName}} | 通过Java包名直接定位到你的App| 跳转显示App详细介绍页 |
+| market://search?q=pname:{{java包名}} | 通过Java包名搜索App | 显示搜索到的App列表 |
+| market://search?q=pub:{{开发者名称}} | 通过开发者名称搜索App | 显示开发者发布的所有App列表 |
+| market://search?q={{关键词}} | 通过关键词搜索App | 显示搜索到的标题/内容相关的所有App列表 |
+| market://search?q={{关键词}}pub:{{开发者名称}} | 组合查询 | 更精确的筛选 |
+
+> 跳转应用商店的market不一定只是官方的市场，如果装有第三方市场也可以由第三方市场检索，个别机型除外。
+
+
+
+## 跳转到各大短视频App 作品页 Scheme合集
+
+|      APP       |               Scheme               |
+| :------------: | :--------------------------------: |
+|  抖音作品页面  | snssdk1128://aweme/detail/[作品id] |
+|  快手作品页面  |        kwai://work/[作品id]        |
+| 皮皮虾作品页面 | bds://cell_detail?item_id=[作品id] |
+|  火山作品页面  |   snssdk1112://item?id=[作品id]    |
+|  西瓜作品页面  | snssdk32://detail?groupid=[作品id] |
+|  微视作品页面  |   weishi://feed?feed_id=[作品id]   |
+
+
+
+## 跳转到各大短视频App 作品页 Scheme合集
+
+|                    |                                     |
+| ------------------ | ----------------------------------- |
+| 快手用户主页       | kwai://profile/[用户ID]             |
+| 微视用户主页       | weishi://profile?person_id=[用户ID] |
+| 抖音用户主页       | snssdk1128://user/profile/[用户ID]  |
+| 抖音极速版用户主页 | snssdk2329://user/profile/[用户ID]  |
+
+   
+
 ## 微信Schema
-| Schema | 描述 |
-| -------------------- | ------------------- |
-| weixin://dl/scan |   扫一扫   |
-| weixin://dl/feedback |   反馈   |
-| weixin://dl/moments  |  朋友圈   |
-| weixin://dl/settings  |  设置   |
-| weixin://dl/notifications |   消息通知设置   |
-| weixin://dl/chat |   聊天设置   |
-| weixin://dl/general  |  通用设置   |
-| weixin://dl/officialaccounts  |  公众号   |
-| weixin://dl/games  |  游戏   |
-| weixin://dl/help |   帮助   |
-| weixin://dl/feedback  |  反馈   |
-| weixin://dl/profile  |  个人信息   |
-| weixin://dl/features  |  功能插件   |
+
+| Schema                       | 描述         |
+| ---------------------------- | ------------ |
+| weixin://dl/scan             | 扫一扫       |
+| weixin://dl/feedback         | 反馈         |
+| weixin://dl/moments          | 朋友圈       |
+| weixin://dl/settings         | 设置         |
+| weixin://dl/notifications    | 消息通知设置 |
+| weixin://dl/chat             | 聊天设置     |
+| weixin://dl/general          | 通用设置     |
+| weixin://dl/officialaccounts | 公众号       |
+| weixin://dl/games            | 游戏         |
+| weixin://dl/help             | 帮助         |
+| weixin://dl/feedback         | 反馈         |
+| weixin://dl/profile          | 个人信息     |
+| weixin://dl/features         | 功能插件     |
 
 
 
-# 跳转应用商店Schema
+### 应用后期变更scheme导致出现错误,欢迎PR,一起维护，如对您有帮助，请给个Start⭐
 
-market://details?id={{PackageName}} 包名
+
+
