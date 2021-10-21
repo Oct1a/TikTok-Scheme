@@ -6,15 +6,17 @@
 
 ## 抖音Schema
 > 网址仅抖音内部人员查看
-gd_label是唤起应用时，通知客户端记录打点的字段
-gd_label参数： https://wiki.bytedance.net/pages/viewpage.action?pageId=179404954
-gd_label的值有哪些： https://docs.google.com/spreadsheets/d/1EWzh4gIbE861d9Rbk-M7QNYCPnltkNt9r2ETVSV2wf4/edit#gid=2126697475
+> gd_label是唤起应用时，通知客户端记录打点的字段
+> gd_label参数： https://wiki.bytedance.net/pages/viewpage.action?pageId=179404954
+> gd_label的值有哪些： https://docs.google.com/spreadsheets/d/1EWzh4gIbE861d9Rbk-M7QNYCPnltkNt9r2ETVSV2wf4/edit#gid=2126697475
+>
+> 有一些参数是可以忽略的，具体可以自测一下，之前用过忘记记录了....
 
 | Schema | 描述 |
 | -------------------- | ------------------- |
 | snssdk1128://feed?refer=web&gd_label={{gd_label}}   | 首页feed     |
 | snssdk1128://aweme/detail/{{id}}?refer=web&gd_label={{gd_label}}&appParam={{appParam}}&needlaunchlog=1'   | 作品详情页     |
-| snssdk1128://user/profile/{{uid}}?refer=web&gd_label={{gd_label}}&type={{type}}&needlaunchlog=1   | 用户主页     |
+| snssdk1128://user/profile/{{uid}}?refer=web&gd_label={{gd_label}}&type={{type}}&needlaunchlog=1   | 用户主页 |
 | snssdk1128://challenge/detail/{{id}}?refer=web&is_commerce=0   | 挑战详情     |
 | snssdk1128://music/detail/{{id}}?refer=web   |  音乐详情，音乐详情ID     |
 | snssdk1128://live?room_id={{room_id}}&user_id={{user_id}}&u_code={{u_code}}&from=webview&refer=web   | 直播间     |
@@ -22,11 +24,14 @@ gd_label的值有哪些： https://docs.google.com/spreadsheets/d/1EWzh4gIbE861d
 | snssdk1128://webview?url={{url}}&from=webview&hide_nav_bar=1&refer=web   |  webview 沉浸式     |
 | snssdk1128://poi/detail?id={{id}}&from=webview&refer=web   | poi详情页     |
 | snssdk1128://forward/detail/{{id}}   |  转发详情页     |
+| snssdk1128://search | 搜索页面 |
 | snssdk1128://search/trending   | 热搜词榜     |
 | snssdk1128://search/trending?type=1   | 热搜视频榜     |
 | snssdk1128://search/trending?type=2   | 热搜音乐榜     |
 | snssdk1128://search/trending?type=3   |  正能量榜     |
 | snssdk1128://search/trending?type=4   |  明星榜     |
+| snssdk1128://setting | 设置页面 |
+| snssdk1128://user/profile | 我的页面 |
 
 >  **gd_label:**
 >  click_wap_profile_bottom  跳转主页
@@ -132,7 +137,11 @@ schema = schema.replace(/^snssdk1128/, 'snssdk2329');
 
 
 
-### 应用后期变更scheme导致出现错误,欢迎PR,一起维护，如对您有帮助，请给个Start⭐
+## 致谢
+
+感谢[@icesvalley](https://github.com/1965514404) 补充抖音数据
 
 
+
+### 应用后期变更scheme导致出现错误,欢迎PR,一起维护，如对您有帮助，请给个Star⭐
 
