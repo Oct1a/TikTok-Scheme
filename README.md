@@ -32,6 +32,7 @@
 | snssdk1128://search/trending?type=4   |  明星榜     |
 | snssdk1128://setting | 设置页面 |
 | snssdk1128://user/profile | 我的页面 |
+| snssdk1128://goods/seeding/?promotion_id={{goodsid}} <br />[示例]([1 · Issue #4 · Oct1a/TikTok-Scheme (github.com)](https://github.com/Oct1a/TikTok-Scheme/issues/4#issuecomment-951524650)) | 商品详情 |
 
 >  **gd_label:**
 >  click_wap_profile_bottom  跳转主页
@@ -50,6 +51,16 @@
 抖音极速版将抖音schema的1128替换成2329即可。
 schema = schema.replace(/^snssdk1128/, 'snssdk2329');
 ```
+
+<br>
+
+## 抖音国际版Schema
+
+```
+抖音国际版将抖音schema的1128替换成1233即可。国际版会有些不一样，具体需自测
+snssdk1233://user/profile
+```
+
 
 
 # 快手Schema
@@ -115,7 +126,7 @@ schema = schema.replace(/^snssdk1128/, 'snssdk2329');
 | 抖音用户主页       | snssdk1128://user/profile/[用户ID]  |
 | 抖音极速版用户主页 | snssdk2329://user/profile/[用户ID]  |
 
-   
+
 
 ## 微信Schema
 
@@ -137,9 +148,11 @@ schema = schema.replace(/^snssdk1128/, 'snssdk2329');
 
 
 
+
+
 ## 致谢
 
-感谢[@icesvalley](https://github.com/1965514404) 补充抖音数据
+感谢[@icesvalley](https://github.com/1965514404) 补充抖音数据（国际版，设置页、跳转商品详情页等）
 
 
 
