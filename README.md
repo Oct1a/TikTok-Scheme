@@ -1,7 +1,11 @@
 # TikTok-Scheme
-抖音、抖音极速版、tiktok 快手 Scheme schemas获取，将持续更新
+抖音、抖音极速版、tiktok 快手 等主流APP的Scheme schemas获取，**将持续更新**。。。
+
+### 应用后期变更scheme导致出现错误,欢迎PR,一起维护，如对您有帮助，请给个Star⭐
 
 >  以下各种Scheme在PC或其它设备上都是无效的，所以只有Android设备能识别这类连接并进行启动，ios内部schema是aweme开头，所提替换链接上的schema为 aweme 开头
+
+
 
 
 ## 抖音Schema
@@ -32,7 +36,11 @@
 | snssdk1128://search/trending?type=4   |  明星榜     |
 | snssdk1128://setting | 设置页面 |
 | snssdk1128://user/profile | 我的页面 |
-| snssdk1128://goods/seeding/?promotion_id={{goodsid}} <br />[示例]([1 · Issue #4 · Oct1a/TikTok-Scheme (github.com)](https://github.com/Oct1a/TikTok-Scheme/issues/4#issuecomment-951524650)) | 商品详情 |
+| snssdk1128://goods/seeding/?promotion_id={{商品id}} <br />[示例]([1 · Issue #4 · Oct1a/TikTok-Scheme (github.com)](https://github.com/Oct1a/TikTok-Scheme/issues/4#issuecomment-951524650)) | 商品详情 |
+| snssdk1128://ec_goods_detail?promotion_id={{商品id}}&enter_from=h5_product_detail&request_additions={"enter_from":"h5_product_detail"} [示例](https://github.com/Oct1a/TikTok-Scheme/issues/4#issuecomment-989526763) | 商品详情 |
+| snssdk1128://lynxview/?channel=fe_lynx_commerce_buynow&bundle=app/template.js&use_rifle=1&id={{商品id}}&disable_activity=0&group_id=0&new_source_type=product_detail&status_bar_color=ffffff&loading_bgcolor=ffffff&hide_nav_bar=1&status_font_dark=1&trans_status_bar=0&dynamic=1&c_biz_combo=8&combo_id={{商品型号id}}&combo_num=1 [示例](https://github.com/Oct1a/TikTok-Scheme/issues/4#issuecomment-989525803)  | 商品订单确认页 |
+| *snssdk1128://goods*/shop/?uid={{用户id}} | 用户橱窗页 |
+| snssdk1128://detail?id={{视频id}}&gd_label=click_schema_yingyongbao | 跳转视频页 |
 
 >  **gd_label:**
 >  click_wap_profile_bottom  跳转主页
@@ -152,9 +160,13 @@ snssdk1233://user/profile
 
 ## 致谢
 
-感谢[@icesvalley](https://github.com/1965514404) 补充抖音数据（国际版，设置页、跳转商品详情页等）
+感谢[@icesvalley](https://github.com/1965514404) 补充抖音数据（国际版，设置页、商品详情页、订单确认页等）
 
 
 
-### 应用后期变更scheme导致出现错误,欢迎PR,一起维护，如对您有帮助，请给个Star⭐
+
+
+## 声明
+
+**仅用于技术交流**，互联网不是法外之地，请勿用于不法用途！
 
